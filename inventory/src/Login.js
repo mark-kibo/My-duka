@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { eventManager } from 'react-toastify/dist/core'
+import './LoginAuth'
 
 function Login() {
     const [values, setValues] = useState({
@@ -8,12 +9,15 @@ function Login() {
         password: ''
     })
 
+    const [errors, setErrors] = useState({})
+
     const handleInput = (event) => {
         setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
     }
 
     const handleSubmit =(event) => {
         event.preventDefault();
+        setErrors(validation(values));
     }
 
   return (
