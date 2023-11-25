@@ -5,6 +5,7 @@ function Signup() {
   return (
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
         <div className='bg-white p-3 rounded w-25'>
+          <h2>Register</h2>
             <form action="">
                 <div className='mb-3'>
                     <label htmlFor="name"><strong>Name</strong></label>
@@ -18,7 +19,7 @@ function Signup() {
                     <label htmlFor="password"><strong>Password</strong></label>
                     <input type="password" placeholder='Enter Password' className='form-control rounded-0'/>
                 </div>
-                <button className='btn btn-success w-100 rounded-0'><strong>Sign Up</strong></button>
+                <button className='btn btn-success w-100 rounded-0'><strong>Register</strong></button>
                 <p>Do you agree with our terms and conditions?</p>
                 <Link to="/"className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Login</Link>
             </form>
