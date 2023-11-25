@@ -19,11 +19,13 @@ function Login() {
             <form action="" onSubmit={handleSubmit}>
                 <div className='mb-3'>
                     <label htmlFor="email"><strong>Email</strong></label>
-                    <input type="email" placeholder='Enter Email' className='form-control rounded-0'/>
+                    <input type="email" placeholder='Enter Email' 
+                    onChange={handleInput} className='form-control rounded-0'/>
                 </div>
                 <div className='mb-3'>
                     <label htmlFor="password"><strong>Password</strong></label>
-                    <input type="password" placeholder='Enter Password' className='form-control rounded-0'/>
+                    <input type="password" placeholder='Enter Password' 
+                    onChange={handleInput} className='form-control rounded-0'/>
                 </div>
                 <button type= 'submit' className='btn btn-success w-100 rounded-0'><strong>Login</strong></button>
                 <p>Do you agree with our terms and conditions?</p>
