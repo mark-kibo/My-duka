@@ -21,13 +21,13 @@ function App() {
 
         <div className="contentContainer">
 
-          <SideBar/>
+          {/* <SideBar /> */}
           <Outlet />
 
 
 
         </div>
-        
+
 
       </div>
     );
@@ -35,9 +35,7 @@ function App() {
   return (
     <div>
 
-      <Routes>
 
-      </Routes>
 
 
 
