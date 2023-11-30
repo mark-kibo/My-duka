@@ -7,7 +7,7 @@ const { Footer } = Layout;
 const AppFooter = () => {
   return (
     <Footer style={{ textAlign: 'center', backgroundColor: '#001529', color: 'white' }}>
-      Your Company &copy; {new Date().getFullYear()}
+      My Duka &copy; {new Date().getFullYear()}
     </Footer>
   );
 };

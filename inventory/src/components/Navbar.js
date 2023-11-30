@@ -10,8 +10,6 @@ const Navbar = () => {
   return (
     <Header style={{ backgroundColor: '#001529' }}>
       <div className="logo" style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>
-        Your Company
-      </div>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['home']} style={{ backgroundColor: '#001529' }}>
         <Menu.Item key="home">
           <Link to="/" style={{ color: 'white' }}>
@@ -34,6 +32,8 @@ const Navbar = () => {
           </Link>
         </Menu.Item>
       </Menu>
+      </div>
+      
     </Header>
   );
 };
