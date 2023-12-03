@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Validation from './LoginAuth';
+import axios from 'axios';
 
 function Login() {
   const [values, setValues] = useState({
-    email: '',
+    username: '',
     password: '',
     userType: 'admin', // Default userType
   });
@@ -15,29 +16,47 @@ function Login() {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
-    // Continue with your login logic
+    const validationErrors = Validation(values);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        const response = await axios.post(`https://myduka-apis.onrender.com/login/${values.userType.toLowerCase()}`, {
+          username: values.username,
+          password: values.password,
+        });
+
+        const { access_token } = response.data;
+
+        console.log('Login Successful:', response.data.message);
+        console.log('Access Token:', access_token);
+        // Handle successful login, e.g., store the token in local storage, redirect to another page, etc.
+      } catch (error) {
+        console.error('Login Error:', error.response ? error.response.data.message : error.message);
+        // Handle error, e.g., display an error message to the user
+      }
+    }
   };
 
   return (
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
       <div className='bg-white p-3 rounded w-25'>
         <h2>Login</h2>
-        <form action='' onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className='mb-3'>
-            <label htmlFor='email'>
-              <strong>Email</strong>
+            <label htmlFor='username'>
+              <strong>Username</strong>
             </label>
             <input
-              type='email'
-              placeholder='Enter Email'
-              name='email'
+              type='text'
+              placeholder='Enter Username'
+              name='username'
               onChange={handleInput}
               className='form-control rounded-0'
             />
-            {errors.email && <span className='text-danger'> {errors.email}</span>}
+            {errors.username && <span className='text-danger'> {errors.username}</span>}
           </div>
           <div className='mb-3'>
             <label htmlFor='password'>
