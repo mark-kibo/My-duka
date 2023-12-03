@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login';
-import ClerkDashboard from './ClerkDashboard';
 import Signup from './Signup';
-import Navbar from './Navbar';
-import AppFooter from './Footer';
+import AdminPanel from './AdminPanel';
 
 function App() {
   return (
@@ -14,10 +12,7 @@ function App() {
           
           <Route path='/' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/' element={<Navbar />} />
-          <Route path='/' element={<AppFooter />} />
-          <Route path='/clerk-dashboard/*' element={<ClerkDashboard />} />
-         
+          <Route path='/admin-panel' element={<AdminPanel />} />
         </Routes>
       </Router>
     </div>
