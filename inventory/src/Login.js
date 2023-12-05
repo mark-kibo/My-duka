@@ -32,10 +32,8 @@ function Login() {
 
         console.log('Login Successful:', response.data.message);
         console.log('Access Token:', access_token);
-        // Handle successful login, e.g., store the token in local storage, redirect to another page, etc.
       } catch (error) {
         console.error('Login Error:', error.response ? error.response.data.message : error.message);
-        // Handle error, e.g., display an error message to the user
       }
     }
   };

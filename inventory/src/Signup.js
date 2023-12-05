@@ -20,25 +20,22 @@ function Signup() {
     event.preventDefault();
     setErrors(Validation(values));
 
-    // Continue with your signup logic
     if (Object.keys(errors).length === 0) {
       try {
-        const response = await axios.post('http://your-backend-api/signup', {
-          username: values.name, // Assuming your backend expects 'username' instead of 'name'
+        const response = await axios.post('https://myduka-apis.onrender.com/signup/', {
+          username: values.name, 
           password: values.password,
           email: values.email,
-          full_name: values.name, // Assuming 'name' is both the full name and username
-          role: 'merchant', // You can set the role as per your requirements
+          full_name: values.name,
+          role: 'merchant',
         });
 
         console.log('Signup Successful:', response.data.message);
-        // Handle successful signup, e.g., show a success message or redirect to login page
       } catch (error) {
         console.error(
           'Signup Error:',
           error.response ? error.response.data.message : error.message
         );
-        // Handle error, e.g., display an error message to the user
       }
     }
   };

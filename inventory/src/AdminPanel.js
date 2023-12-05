@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function AdminPanel() {
-  // eslint-disable-next-line
   const [adminDetails, setAdminDetails] = useState({
     name: '',
     email: '',
@@ -14,14 +13,12 @@ function AdminPanel() {
   };
 
   const generateTokenizedLink = () => {
-    // Implement logic to generate a tokenized link (e.g., using a backend service)
-    const generatedToken = 'your_generated_token'; // Replace with actual token
-    setTokenizedLink(`http://yourapp.com/signup?token=${generatedToken}`);
+    const generatedToken = 'your_generated_token'; // here we replace with actual token
+    setTokenizedLink(`https://myduka-apis.onrender.com/signup/=${generatedToken}`);
   };
 
   const sendTokenizedLink = () => {
-    // Implement logic to send the tokenized link to the admin's email (e.g., using a backend service)
-    // You may need to integrate with a backend API for this functionality
+    
     console.log('Tokenized link sent:', tokenizedLink);
   };
 
