@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FaTachometerAlt, FaRegSun, FaChevronRight, FaChevronLeft } from "react-icons/fa"
 
 const Sidebar = () => {
@@ -17,8 +18,10 @@ const Sidebar = () => {
             <p className='text-[14px] font-extrabold leading-[14px] text-white/[0.4]'>Ecommerce</p>
             <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
                 <div className='flex items-center gap-[10px]'>
-                    <FaRegSun color='white'/>
-                    <p className='text-[14px] leading-[20px] font-normal text-white'>Stores</p>
+                    <Link to="/stores" className='flex items-center gap-[10px]'>
+                        <FaRegSun color='white'/>
+                        <p className='text-[14px] leading-[20px] font-normal text-white'>Stores</p>
+                    </Link>
                 </div>
                 <FaChevronRight/>
             </div>
