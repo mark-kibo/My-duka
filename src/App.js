@@ -2,21 +2,19 @@ import { Outlet } from "react-router-dom";
 import DashBoardOverView from "./components/DashBoard/DashBoardOverView";
 import Sidebar from "./components/Sidebar";
 
-
 function App() {
   return (
-    <div className="flex">
-      {/* sidebar */}
-      <div className="basis-[12%] border overflow-hidden">
-        <Sidebar/>
-
+    <div className="flex overflow-y-hidden">
+      {/* Sidebar */}
+      <div className="basis-[12%] border overflow-hidden bg-blue-600">
+        <Sidebar />
       </div>
 
-
-      <div className="basis-[88%] border overflow-y-auto">
-        <DashBoardOverView/>
+      {/* Dashboard */}
+      <div className="basis-[88%] border overflow-y-auto max-h-screen">
+        <DashBoardOverView />
         <div>
-          <Outlet></Outlet>
+          <Outlet />
         </div>
       </div>
     </div>

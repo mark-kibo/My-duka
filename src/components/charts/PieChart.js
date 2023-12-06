@@ -34,7 +34,7 @@ export default function PieChartPlot() {
                     cy="50%"
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={90}
+                    outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
                 >
@@ -50,14 +50,14 @@ export default function PieChartPlot() {
                 ))}
             </div>
 
-            <div className='grid grid-cols-4 mt-[15px]'>
+            {/* <div className='grid grid-cols-4 mt-5'>
 
                 {COLORS.map((item, index) => (
                     <div className='h-[30px] w-[30px]' style={{background:item}} key={index}>
 
                     </div>
                 ))}
-            </div>
+            </div> */}
         </>
     );
 }
