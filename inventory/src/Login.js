@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Validation from './LoginAuth';
 import axios from 'axios';
 
 function Login() {
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     username: '',
     password: '',
@@ -32,6 +34,9 @@ function Login() {
 
         console.log('Login Successful:', response.data.message);
         console.log('Access Token:', access_token);
+
+        // Redirect to the appropriate page based on userType
+        navigate(values.userType === 'admin' ? '/admin-panel' : '/merchant-dashboard');
       } catch (error) {
         console.error('Login Error:', error.response ? error.response.data.message : error.message);
       }

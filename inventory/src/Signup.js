@@ -18,9 +18,10 @@ function Signup() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
+    const validationErrors = Validation(values);
+    setErrors(validationErrors);
 
-    if (Object.keys(errors).length === 0) {
+    if (Object.keys(validationErrors).length === 0) {
       try {
         const response = await axios.post('https://myduka-apis.onrender.com/signup/', {
           username: values.name, 
@@ -44,7 +45,7 @@ function Signup() {
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
       <div className='bg-white p-3 rounded w-25'>
         <h2>Register</h2>
-        <form action='' onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor='name'>
               <strong>Name</strong>
@@ -56,6 +57,7 @@ function Signup() {
               onChange={handleInput}
               className='form-control rounded-0'
             />
+            {errors.name && <span className='text-danger'> {errors.name}</span>}
           </div>
           <div className='mb-3'>
             <label htmlFor='email'>
@@ -68,6 +70,7 @@ function Signup() {
               onChange={handleInput}
               className='form-control rounded-0'
             />
+            {errors.email && <span className='text-danger'> {errors.email}</span>}
           </div>
           <div className='mb-3'>
             <label htmlFor='password'>
@@ -80,6 +83,7 @@ function Signup() {
               onChange={handleInput}
               className='form-control rounded-0'
             />
+            {errors.password && <span className='text-danger'> {errors.password}</span>}
           </div>
           <button className='btn btn-success w-100 rounded-0'>
             <strong>Register</strong>
