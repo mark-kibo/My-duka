@@ -15,7 +15,7 @@ const Router = () => {
                 <Routes>
                 <Route element={<PrivateRoute />}>
                     <Route path="/" element={<App />}>
-                        <Route index element={<Main />} />
+                        <Route index element={<Main userRole="merchant" />} />
                         <Route path='/stores' element={<Stores />} />
                         <Route path='/clerk' element={<ClerkDashboard />} />
 

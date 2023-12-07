@@ -4,7 +4,6 @@ import AreaChart from './charts/AreaChart';
 import PieChartPlot from './charts/PieChart';
 import { useState } from 'react';
 
-import UserTable from './UserTable';
 
 const Main = ({ userRole }) => {
     const [showUserTable, setShowUserTable] = useState(false);
