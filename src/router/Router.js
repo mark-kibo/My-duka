@@ -6,24 +6,43 @@ import New from '../components/new'
 import Stores from '../components/Stores'
 import PrivateRoute from '../utils/PrivateRoute'
 import Login from '../components/Login'
+import UserTable from '../components/UserTable'
+
 import ClerkDashboard from '../components/ClerkDashboard'
+import SwipeableTemporaryDrawer from '../components/swipeabledrawer'
+import SideBarContextProvider from '../context/SideBarContext'
+import Products from '../components/AdminPages/Products'
+import Clerks from '../components/AdminPages/clerk/clerk'
+import SupplyRequest from '../components/AdminPages/supplyrequest/supplyrequest'
+import ProductTable from '../components/ProductTable'
 
 const Router = () => {
     return (
         <div>
+               <SideBarContextProvider>
             <BrowserRouter>
                 <Routes>
                 <Route element={<PrivateRoute />}>
                     <Route path="/" element={<App />}>
-                        <Route index element={<Main userRole="merchant" />} />
+                 
+                        <Route index element={<Main userRole={'admin'}/>} />
                         <Route path='/stores' element={<Stores />} />
-                        <Route path='/clerk' element={<ClerkDashboard />} />
+                        <Route path='/users' element={<UserTable />} />
+                        <Route path='/products' element={<Products/>}/>
+                        <Route path='clerks' element={<Clerks/>}/>
+                        <Route path='/supplyrequests' element={<SupplyRequest/>}/>
+                      
+                  
+                        <Route path='/merchantproducts' element={<ProductTable />} />
+                        
 
                     </Route>
                 </Route>
                 <Route path='/login' element={<Login/>}/>
+                
                 </Routes>
             </BrowserRouter>
+            </SideBarContextProvider>
         </div>
     )
 }
