@@ -1,166 +1,177 @@
 import React, { useState } from 'react';
 
 const Stores = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
-  // Sample store data (replace with your actual data)
-  const storeData = [
+  const [storeData, setStoreData] = useState([
     { id: 1, name: 'Store 1', location: 'Location 1' },
     { id: 2, name: 'Store 2', location: 'Location 2' },
     { id: 3, name: 'Store 3', location: 'Location 3' },
     { id: 4, name: 'Store 4', location: 'Location 4' },
-  ];
+    { id: 5, name: 'Store 4', location: 'Location 4' },
+    { id: 6, name: 'Store 5', location: 'Location 5' },
+    { id: 7, name: 'Store 6', location: 'Location 6' },
+    { id: 8, name: 'Store 7', location: 'Location 7' },
+    { id: 9, name: 'Store 8', location: 'Location 8' },
+    { id: 10, name: 'Store 9', location: 'Location 9' },
+    { id: 11, name: 'Store 10', location: 'Location 10' },
+    { id: 12, name: 'Store 11', location: 'Location 11' },
+    { id: 13, name: 'Store 12', location: 'Location 12' },
+    { id: 14, name: 'Masibo', location: 'Location 13' },
+    // ... (more store data)
+  ]);
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [newStore, setNewStore] = useState({ name: '', location: '' });
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewStore({ ...newStore, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStoreData([...storeData, { id: storeData.length + 1, ...newStore }]);
+    closeModal();
+  };
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [storesPerPage] = useState(5);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Filtering logic
+  const filteredStores = storeData.filter((store) =>
+    store.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Pagination logic
+  const indexOfLastStore = currentPage * storesPerPage;
+  const indexOfFirstStore = indexOfLastStore - storesPerPage;
+  const currentStores = filteredStores.slice(indexOfFirstStore, indexOfLastStore);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="p-8">
       <h1 className="text-3xl font-extrabold mb-6">MyDuka Stores</h1>
 
-      {/* Button to open the modal form */}
-      <button
+       {/* Add New Store button */}
+       <button
         onClick={openModal}
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none"
       >
         Add New Store
       </button>
 
-      {/* Modal Form */}
+      {/* Search input */}
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for a store..."
+        className="mt-4 p-2 border rounded"
+      />
+
+      {/* Table */}
+      <table className="min-w-full border rounded mt-4">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border p-2">ID</th>
+            <th className="border p-2">Name</th>
+            <th className="border p-2">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentStores.map((store) => (
+            <tr key={store.id}>
+              <td className="border p-2">{store.id}</td>
+              <td className="border p-2">{store.name}</td>
+              <td className="border p-2">{store.location}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Pagination */}
+      <div className="flex justify-end mt-4">
+        <span>
+          Page{' '}
+          <strong>
+            {currentPage} of {Math.ceil(filteredStores.length / storesPerPage)}
+          </strong>{' '}
+        </span>
+        <button
+          onClick={() => paginate(1)}
+          className="ml-2 text-blue-500"
+          disabled={currentPage === 1}
+        >
+          {'<<'}
+        </button>
+        <button
+          onClick={() => paginate(currentPage - 1)}
+          className="ml-2 text-blue-500"
+          disabled={currentPage === 1}
+        >
+          {'<'}
+        </button>
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          className="ml-2 text-blue-500"
+          disabled={currentPage === Math.ceil(filteredStores.length / storesPerPage)}
+        >
+          {'>'}
+        </button>
+        <button
+          onClick={() => paginate(Math.ceil(filteredStores.length / storesPerPage))}
+          className="ml-2 text-blue-500"
+          disabled={currentPage === Math.ceil(filteredStores.length / storesPerPage)}
+        >
+          {'>>'}
+        </button>
+      </div>
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center">
-          <div className="bg-black bg-opacity-50 fixed inset-0"></div>
-          <div className="bg-white p-8 rounded shadow">
-            <h2 className="text-lg font-bold mb-4">Add New Store</h2>
-            
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-8 max-w-md rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Add New Store</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-gray-700">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={newStore.name}
+                  onChange={handleInputChange}
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Location:</label>
+                <input
+                  type="text"
+                  name="location"
+                  value={newStore.location}
+                  onChange={handleInputChange}
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none"
+              >
+                Add Store
+              </button>
+            </form>
             <button
               onClick={closeModal}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none"
+              className="mt-4 text-gray-600 hover:text-gray-800 focus:outline-none"
             >
               Close
             </button>
           </div>
         </div>
       )}
-
-      {/* Display tables of stores */}
-      <div className="grid grid-cols-2 grid-rows-2 gap-6 mt-8">
-        {/* Table 1 */}
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">Stores</h2>
-          <table className="min-w-full border rounded">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-2">ID</th>
-                <th className="border p-2">Name</th>
-                <th className="border p-2">Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {storeData.map((store) => (
-                <tr key={store.id}>
-                  <td className="border p-2">{store.id}</td>
-                  <td className="border p-2">{store.name}</td>
-                  <td className="border p-2">{store.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Table 2 */}
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">Products</h2>
-          <table className="min-w-full border rounded">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-2">ID</th>
-                <th className="border p-2">Product Name</th>
-                <th className="border p-2">Category</th>
-                <th className="border p-2">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Replace with actual product data */}
-              <tr>
-                <td className="border p-2">1</td>
-                <td className="border p-2">Product 1</td>
-                <td className="border p-2">Category A</td>
-                <td className="border p-2">$20.00</td>
-              </tr>
-              <tr>
-                <td className="border p-2">2</td>
-                <td className="border p-2">Product 2</td>
-                <td className="border p-2">Category B</td>
-                <td className="border p-2">$25.00</td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
-
-        {/* Table 3 */}
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">Suppliers</h2>
-          <table className="min-w-full border rounded">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-2">Supplier ID</th>
-                <th className="border p-2">Supplier Name</th>
-                <th className="border p-2">Contact Email</th>
-                <th className="border p-2">Phone Number</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Replace with actual supplier data */}
-              <tr>
-                <td className="border p-2">1</td>
-                <td className="border p-2">Supplier A</td>
-                <td className="border p-2">supplierA@example.com</td>
-                <td className="border p-2">123-456-7890</td>
-              </tr>
-              <tr>
-                <td className="border p-2">2</td>
-                <td className="border p-2">Supplier B</td>
-                <td className="border p-2">supplierB@example.com</td>
-                <td className="border p-2">987-654-3210</td>
-              </tr>
-             
-            </tbody>
-          </table>
-        </div>
-
-        {/* Table 4 */}
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">Transactions</h2>
-          <table className="min-w-full border rounded">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-2">Transaction ID</th>
-                <th className="border p-2">Date</th>
-                <th className="border p-2">Amount</th>
-                <th className="border p-2">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Replace with  actual transaction data */}
-              <tr>
-                <td className="border p-2">1</td>
-                <td className="border p-2">2023-01-15</td>
-                <td className="border p-2">$100.00</td>
-                <td className="border p-2">Completed</td>
-              </tr>
-              <tr>
-                <td className="border p-2">2</td>
-                <td className="border p-2">2023-02-20</td>
-                <td className="border p-2">$76.50</td>
-                <td className="border p-2">Pending</td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
   );
 };
