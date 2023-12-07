@@ -1,6 +1,9 @@
 import { Outlet } from "react-router-dom";
 import DashBoardOverView from "./components/DashBoard/DashBoardOverView";
 import Sidebar from "./components/Sidebar";
+import SignUp from "./components/Signup";
+import UserTable from "./components/UserTable";
+import ProductTable from "./components/ProductTable";
 
 function App() {
   return (
@@ -16,7 +19,11 @@ function App() {
         <div>
           <Outlet />
         </div>
+        
+        
+        
       </div>
+     
     </div>
   );
 }
