@@ -6,6 +6,7 @@ import New from '../components/new'
 import Stores from '../components/Stores'
 import PrivateRoute from '../utils/PrivateRoute'
 import Login from '../components/Login'
+import ClerkDashboard from '../components/ClerkDashboard'
 
 const Router = () => {
     return (
@@ -16,6 +17,7 @@ const Router = () => {
                     <Route path="/" element={<App />}>
                         <Route index element={<Main />} />
                         <Route path='/stores' element={<Stores />} />
+                        <Route path='/clerk' element={<ClerkDashboard />} />
 
                     </Route>
                 </Route>
