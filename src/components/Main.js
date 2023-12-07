@@ -3,6 +3,7 @@ import { FaEllipsisV, FaStore } from 'react-icons/fa';
 import AreaChart from './charts/AreaChart';
 import PieChartPlot from './charts/PieChart';
 import { useState } from 'react';
+import ClerkDashboard from './ClerkDashboard';
 
 
 const Main = ({ userRole }) => {
@@ -63,6 +64,8 @@ const Main = ({ userRole }) => {
 
       {/* Render merchant-specific activities */}
       {userRole === 'merchant' && renderMerchantActivities()}
+      {/* Render ClerkDashboard if userRole is 'clerk' */}
+      {userRole === 'clerk' && <ClerkDashboard />}
 
       {/* charts */}
       <div className='flex mt-[20px] w-full gap-[30px]'>
