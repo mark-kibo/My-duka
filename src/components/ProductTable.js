@@ -37,7 +37,7 @@ function ProductTable() {
 
   return (
     <div className="product-table-container" style={{ padding: '20px' }}>
-      {/* Add your additional buttons or modals here if needed */}
+      
       <Box sx={{ height: 400, width: 1 }}>
         <DataGrid
           rows={products}
