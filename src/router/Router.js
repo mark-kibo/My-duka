@@ -6,6 +6,7 @@ import New from '../components/new'
 import Stores from '../components/Stores'
 import PrivateRoute from '../utils/PrivateRoute'
 import Login from '../components/Login'
+import ClerkDashboard from '../components/ClerkDashboard'
 
 const Router = () => {
     return (
@@ -14,8 +15,9 @@ const Router = () => {
                 <Routes>
                 <Route element={<PrivateRoute />}>
                     <Route path="/" element={<App />}>
-                        <Route index element={<Main />} />
+                        <Route index element={<Main userRole="merchant" />} />
                         <Route path='/stores' element={<Stores />} />
+                        <Route path='/clerk' element={<ClerkDashboard />} />
 
                     </Route>
                 </Route>

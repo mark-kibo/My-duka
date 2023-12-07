@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { FaTachometerAlt, FaRegSun, FaChevronRight, FaChevronLeft, FaStore, FaShoppingBag, FaMoneyBill} from "react-icons/fa"
+import { FaTachometerAlt, FaRegSun, FaChevronRight, FaChevronLeft, FaStore, FaShoppingBag, FaMoneyBill, FaUser} from "react-icons/fa"
 
 const Sidebar = () => {
   return (
@@ -45,6 +45,15 @@ const Sidebar = () => {
                 </div>
                
             </div>
+        </div>
+
+        <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
+          <div className='flex items-center gap-[10px]'>
+            <Link to="/clerk" className='flex items-center gap-[10px]'>
+              <FaUser color='white' />
+              <p className='text-[14px] leading-[20px] font-normal text-white cursor-pointer'>Clerk</p>
+            </Link>
+          </div>
         </div>
       
 
