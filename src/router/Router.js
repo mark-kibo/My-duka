@@ -29,11 +29,11 @@ const Router = () => {
                         <Route path='/stores' element={<Stores />} />
                         <Route path='/users' element={<UserTable />} />
                         <Route path='/products' element={<Products/>}/>
-                        <Route path='/products' element={<Clerks/>}/>
-                        <Route path='/products' element={<SupplyRequest/>}/>
+                        <Route path='clerks' element={<Clerks/>}/>
+                        <Route path='/supplyrequests' element={<SupplyRequest/>}/>
                       
                   
-                        <Route path='/products' element={<ProductTable />} />
+                        <Route path='/merchantproducts' element={<ProductTable />} />
                         
 
                     </Route>

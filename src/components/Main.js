@@ -177,56 +177,7 @@ const Main = ({ userRole }) => {
   )};
 
 
-  const renderClerkActivities = () => {
-    return(
-      <div>
-        <div className='pt-[25px] px-[25px] bg-[#fafafa]'>
-          
-
-          <div className='grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px]'>
-          <Link to='/users'>
-            <div
-              className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'
-              
-            >
-              <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Products</h2>
-          
-              </div>
-              <FaEllipsisV fontSize={28} color='blue' />
-            </div>
-            </Link>
-
-            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
-              <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Stock</h2>
-                
-              </div>
-              <FaEllipsisV fontSize={28} color='purple' />
-            </div>
-
-            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
-              <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Spoiled</h2>
-             
-              </div>
-              <FaEllipsisV fontSize={28} color='orange' />
-            </div>
-
-            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200' 
-            onClick={handlePaidNonPaidProductsClick}>
-              <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
-
-              </div>
-              <FaEllipsisV fontSize={28} color='green' />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    )
-  };
+ 
 
   
 
