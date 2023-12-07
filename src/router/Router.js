@@ -8,6 +8,7 @@ import PrivateRoute from '../utils/PrivateRoute'
 import Login from '../components/Login'
 import UserTable from '../components/UserTable'
 
+import ClerkDashboard from '../components/ClerkDashboard'
 
 const Router = () => {
     return (
