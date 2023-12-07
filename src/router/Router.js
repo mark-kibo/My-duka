@@ -9,6 +9,7 @@ import Login from '../components/Login'
 import UserTable from '../components/UserTable'
 
 import ClerkDashboard from '../components/ClerkDashboard'
+import ProductTable from '../components/ProductTable'
 
 const Router = () => {
     return (
@@ -20,6 +21,7 @@ const Router = () => {
                         <Route index element={<Main userRole={'merchant'}/>} />
                         <Route path='/stores' element={<Stores />} />
                         <Route path='/users' element={<UserTable />} />
+                        <Route path='/products' element={<ProductTable />} />
                         
 
                     </Route>
