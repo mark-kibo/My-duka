@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" viewBox="0 0 610 610" version="1.1">
+  <g id="layer4" transform="translate(5 -397.36)">
+    <g id="g7018">
+      <rect id="rect5840" stroke-linejoin="round" ry="1.5381" height="600" width="600" stroke="#4a0" y="402.36" x="0" stroke-width="10" fill="none"/>
+      <path id="path3822" d="m159.99 636.63c-8.2916 1.2428-62.779-3.2321-70.958-5.8247-5.2408-1.7509-25.233-10.658-24.298 8.49 4.8449 99.265 7.5234 182.2 47.946 283.55 3.6768 9.7376 1.6666 7.1548 9.2235 23.667 2.3196 5.0683 4.5815 16.012 35.431 10.932 130.94-7.192 172.34-1.034 270.57 1.2397 64.919 18.287 51.475-123.27 65.702-172.47 2.6269-4.8573 32.165-107.02 18.366-149.33-1.7005-5.2138-0.93337-10.592-11.824-12.172-30.105-3.9622-43.117-1.4873-83.032 4.0459-35.753-261.36-260.76-194.75-257.13 7.8646zm234.45-5.7233c-47.366 0.26189-146.68 7.3237-212.17 6.7376-19.383-216.54 220.65-209.74 212.17-6.7376z" fill="#94c207"/>
+      <path id="path5587" d="m287.08 669.5c-69.92 0-126.59 56.666-126.59 126.59 0 69.92 56.666 126.59 126.59 126.59 69.92 0 126.59-56.666 126.59-126.59 0-8.1467-0.7819-16.056-2.2585-23.769l20.435-3.6567-22.586-27.21-22.908-26.888-12.153 33.125-11.938 33.233 23.769-4.0869c1.2071 6.2198 1.8284 12.672 1.8284 19.251 0 55.665-45.11 100.77-100.77 100.77-55.665 0-100.77-45.11-100.77-100.77 0-55.665 45.11-100.77 100.77-100.77 32.657 0 61.708 15.506 80.125 39.578l10.002-27.533c-22.96-23.35-54.8-37.87-90.14-37.87z" fill="#250"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>eco green shopping icon</dc:title>
+        <dc:date>2013-09-17T19:52:19</dc:date>
+        <dc:description/>
+        <dc:source>http://openclipart.org/detail/183543/eco-green-shopping-icon-by-dominiquechappard-183543</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dominiquechappard</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>ecology</rdf:li>
+            <rdf:li>green</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>recycling</rdf:li>
+            <rdf:li>shopping</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

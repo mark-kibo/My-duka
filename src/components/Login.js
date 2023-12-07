@@ -5,8 +5,8 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import Button from './Button';
-import '../Login.css'
+// import Button from './Button';
+// import '../Login.css'
 import Main from './Main';
 
 
@@ -80,7 +80,7 @@ function Login() {
             <div className='error-message'>{errors.password}</div>
           )}
 
-          <Button type='submit' content='Log In' className='submit-button' />
+          <button type='submit' content='Log In' className='submit-button' />
         </Form>
       )}
     </Formik>

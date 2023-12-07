@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Router from './router/Router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import SideBarContextProvider from './context/SideBarContext';
 
 
 
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-    <Router />
+   
+        <Router />
+     
     </QueryClientProvider>
   </React.StrictMode>
 );
