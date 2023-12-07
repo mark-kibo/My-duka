@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../UserTable.css';
-import {Modal, Input} from 'antd'
+import { Modal, Input, Button } from 'antd';
+import Box from '@mui/material/Box';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+
+const VISIBLE_FIELDS = ['user_id', 'username', 'email', 'full_name', 'role', 'store_id'];
 
 function UserTable() {
   const [users, setUsers] = useState([]);
@@ -17,15 +20,15 @@ function UserTable() {
         return response.json();
       })
       .then((data) => {
-        setUsers(data);
-        console.log('Users after fetch:', data);
-      })
+        const usersWithIds = data.map((user, index) => ({ ...user, id: user.user_id || index }));
+      setUsers(usersWithIds);
+      console.log('Users after fetch:', usersWithIds);
+    })
       .catch((error) => console.error('Error fetching users:', error));
   }, []);
 
   const handleAddAdmin = () => {
     if (selectedUserId || (users && users.length > 0)) {
-      
       setShowAddAdminModal(true);
     } else {
       console.warn('No user selected to add admin');
@@ -39,7 +42,6 @@ function UserTable() {
 
   const handleConfirmAddAdmin = () => {
     console.log('Add admin for user ID:', selectedUserId, 'with email:', adminEmail);
-    
     setShowAddAdminModal(false);
     setAdminEmail('');
   };
@@ -48,11 +50,49 @@ function UserTable() {
     console.log('Delete user with ID:', userId);
   };
 
+  const handleDeactivateUser = (userId) => {
+    
+    console.log('Deactivate user with ID:', userId);
+  };
+
+  const columns = VISIBLE_FIELDS.map((field) => ({
+    field,
+    headerName: field.replace('_', ' ').toUpperCase(),
+    flex: 1,
+  }));
+
+  
+  columns.push({
+    field: 'actions',
+    headerName: 'Actions',
+    sortable: false,
+    width: 200,
+    renderCell: (params) => (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => handleDeleteUser(params.row.user_id)}
+          style={{ marginRight: '8px' }}
+        >
+          Delete
+        </Button>
+        <Button
+          variant="contained"
+          color="default"
+          onClick={() => handleDeactivateUser(params.row.user_id)}
+        >
+          Deactivate
+        </Button>
+      </div>
+    ),
+  });
+
   return (
-    <div className="user-table-container">
-      <button onClick={handleAddAdmin} className="add-admin-button">
+    <div className="user-table-container" style={{ padding: '20px' }}>
+      <Button onClick={handleAddAdmin} className="add-admin-button" style={{ marginBottom: '20px' }}>
         Add Admin
-      </button>
+      </Button>
 
       <Modal
         title="Enter Admin Email"
@@ -67,36 +107,24 @@ function UserTable() {
         />
       </Modal>
 
-      <table className="user-table">
-        <thead>
-          <tr>
-            <th>User ID</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Full Name</th>
-            <th>Role</th>
-            <th>Store ID</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.user_id}>
-              <td>{user.user_id}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.full_name}</td>
-              <td>{user.role}</td>
-              <td>{user.store_id}</td>
-              <td>
-                <button onClick={() => handleDeleteUser(user.user_id)} className="add-admin-button">Delete/Deactivate</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Box sx={{ height: 400, width: 1 }}>
+        <DataGrid
+          rows={users}
+          columns={columns}
+          pageSize={3}
+          checkboxSelection
+          disableSelectionOnClick
+          onSelectionModelChange={(selection) => {
+            setSelectedUserId(selection.selectionModel[0] || null);
+          }}
+          components={{
+            Toolbar: GridToolbar,
+          }}
+        />
+      </Box>
     </div>
   );
 }
+
 
 export default UserTable;

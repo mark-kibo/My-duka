@@ -14,6 +14,7 @@ import SideBarContextProvider from '../context/SideBarContext'
 import Products from '../components/AdminPages/Products'
 import Clerks from '../components/AdminPages/clerk/clerk'
 import SupplyRequest from '../components/AdminPages/supplyrequest/supplyrequest'
+import ProductTable from '../components/ProductTable'
 
 const Router = () => {
     return (
@@ -32,6 +33,7 @@ const Router = () => {
                         <Route path='/products' element={<SupplyRequest/>}/>
                       
                   
+                        <Route path='/products' element={<ProductTable />} />
                         
 
                     </Route>

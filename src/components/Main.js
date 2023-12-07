@@ -111,8 +111,110 @@ const Main = ({ userRole }) => {
               <FaEllipsisV fontSize={28} color='orange' />
             </div>
 
-            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'
-              onClick={handlePaidNonPaidProductsClick}>
+            <Link to='/products' className='hover:underline'>
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+                <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
+                </div>
+                <FaEllipsisV fontSize={28} color='blue' />
+            </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    
+  )};
+
+
+  const renderClerkActivities = () => {
+    return(
+      <div>
+        <div className='pt-[25px] px-[25px] bg-[#fafafa]'>
+          
+
+          <div className='grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px]'>
+          <Link to='/users'>
+            <div
+              className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'
+              
+            >
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Products</h2>
+          
+              </div>
+              <FaEllipsisV fontSize={28} color='blue' />
+            </div>
+            </Link>
+
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Stock</h2>
+                
+              </div>
+              <FaEllipsisV fontSize={28} color='purple' />
+            </div>
+
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Spoiled</h2>
+             
+              </div>
+              <FaEllipsisV fontSize={28} color='orange' />
+            </div>
+
+            <Link to='/products' className='hover:underline'>
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+                <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
+                </div>
+                <FaEllipsisV fontSize={28} color='blue' />
+            </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    
+  )};
+
+
+  const renderClerkActivities = () => {
+    return(
+      <div>
+        <div className='pt-[25px] px-[25px] bg-[#fafafa]'>
+          
+
+          <div className='grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px]'>
+          <Link to='/users'>
+            <div
+              className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'
+              
+            >
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Products</h2>
+          
+              </div>
+              <FaEllipsisV fontSize={28} color='blue' />
+            </div>
+            </Link>
+
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Stock</h2>
+                
+              </div>
+              <FaEllipsisV fontSize={28} color='purple' />
+            </div>
+
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+              <div>
+                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Spoiled</h2>
+             
+              </div>
+              <FaEllipsisV fontSize={28} color='orange' />
+            </div>
+
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200' 
+            onClick={handlePaidNonPaidProductsClick}>
               <div>
                 <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
 
@@ -137,27 +239,11 @@ const Main = ({ userRole }) => {
       <>
         {userRole === "merchant" && (renderMerchantActivities())}
         {userRole === "admin" && (renderAdminCards())}
+        {userRole === "clerk" && (renderClerkActivities())}
       </>
 
 
-      {/* charts */}
-      {/* <div className='flex mt-[20px] w-full gap-[30px]'>
-        <div className='basis-[70%] border bg-white shadow-md cursor-pointer rounded-[4px]'>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED] mb-[20px]'>
-            <h2>Earnings overview</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <AreaChart />
-        </div>
-
-        <div className='basis-[30%] border bg-white shadow-md cursor-pointer rounded-[4px]'>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED]'>
-            <h2>Revenue Resource</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <PieChartPlot />
-        </div>
-      </div> */}
+    
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div className='p-4 shadow-md bg-white rounded-md flex flex-col hover:scale-[103%] cursor-pointer transition duration-100 '>
