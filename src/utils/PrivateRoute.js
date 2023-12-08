@@ -1,17 +1,11 @@
+import { useContext } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { sidebarcontext } from "../context/SideBarContext";
 
-import {  Navigate, Outlet } from  "react-router-dom"
+const PrivateRoute = () => {
+  const { user } = useContext(sidebarcontext);
 
+  return user && user?.token ? <Outlet /> : <Navigate to="/login" />;
+};
 
-
-
-
-const PrivateRoute = ()=>{
-        let user = true
-
-        
-        return (
-           user ? <Outlet/> : <Navigate to="/login"/>
-        )
-}
-
-export default PrivateRoute
+export default PrivateRoute;
