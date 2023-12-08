@@ -19,10 +19,12 @@ const SideBarContextProvider = ({ children }) => {
   });
 
   let decoded_user;
+  let userRole;
 
 
   if(user?.token){
       decoded_user=jwtDecode(user?.token);
+      userRole= decoded_user?.role
   }
 
   
@@ -33,7 +35,7 @@ const SideBarContextProvider = ({ children }) => {
     bottom: false,
     right: false,
   });
-  const userRole = "admin";
+
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (

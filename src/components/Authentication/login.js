@@ -41,10 +41,10 @@ function Login() {
       .then((data) => {
         console.log(data)
         localStorage.setItem("token", data.access_token)
-        setMsg({
-            type: "success",
-            message: "redirecting",
-          });
+        // setMsg({
+        //     type: "success",
+        //     message: "redirecting",
+        //   });
         navigate("/")
   
       })
@@ -70,7 +70,7 @@ function Login() {
         )}
       </>
       <div
-        className="flex bg-white w-[50%] md:w-[40%] lg:w-[30%]  h-[80%] md:h-[50%] justify-center items-center p-1 m-5 shadow-2xl rounded-2xl"
+        className="flex bg-white w-[90%] md:w-[40%] lg:w-[30%]  h-auto  justify-center items-center p-1 m-5 shadow-2xl rounded-2xl"
         style={{
           overflow: "hidden",
         }}
