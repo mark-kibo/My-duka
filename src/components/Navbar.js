@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div>
       <header className="antialiased">
-        <nav className="bg-[#2596be] border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav className="bg-[#1F5780] border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center">
             <div className="flex justify-start items-center">
               <button
@@ -32,7 +32,7 @@ const Navbar = () => {
                 onClick={toggleDrawer("left", true)}
                 aria-expanded="true"
                 aria-controls="sidebar"
-                className="hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700"
+                className="hidden p-2 mr-3 text-white rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700"
               >
                 <svg
                   className="w-5 h-5"
@@ -54,7 +54,7 @@ const Navbar = () => {
               <button
                 aria-expanded="true"
                 aria-controls="sidebar"
-                className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="p-2 mr-2 text-white bg-white rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 onClick={toggleDrawer("left", true)}
               >
                 <svg
@@ -81,7 +81,7 @@ const Navbar = () => {
                   className="mr-3 h-8 bg-white"
                   alt="my duka logo"
                 />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-white">
                   MyDuka
                 </span>
               </a>

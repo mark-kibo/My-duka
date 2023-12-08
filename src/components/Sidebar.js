@@ -7,7 +7,7 @@ const Sidebar = () => {
     const { state, setState, toggleDrawer, userRole } = React.useContext(sidebarcontext)
    console.log(userRole)
     return (
-        <div className='bg-[#2596be] min-h-screen px-[25px] overflow-y-hidden'>
+        <div className='bg-[#1F5780]  min-h-screen px-[25px] overflow-y-hidden'>
             <div className='px-[15px] py-[30px] flex items-center justify-center border-b-[1px] border-[#EDEDED]/[0.1]'>
                 <h1 className='text-white text-[20px] leading-[24px] font-extrabold cursor-pointer'>MyDuka panel</h1>
             </div>

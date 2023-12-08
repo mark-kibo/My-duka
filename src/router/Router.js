@@ -12,6 +12,8 @@ import Clerks from '../components/AdminPages/clerk/clerk'
 import SupplyRequest from '../components/AdminPages/supplyrequest/supplyrequest'
 import ProductTable from '../components/ProductTable'
 import Login from '../components/Authentication/login'
+import SignUpAdmin from '../components/Authentication/signupAdmin'
+import SignUpMerchant from '../components/Authentication/signupMerchant'
 
 const Router = () => {
     const {toggleDrawer, decoded_user}= useContext(sidebarcontext)
@@ -36,6 +38,8 @@ const Router = () => {
                     </Route>
                 </Route>
                 <Route path='/login' element={<Login/>}/>
+                <Route path='/signup/:emailtoken' element={<SignUpAdmin/>}/>
+                <Route path='/signup' element={<SignUpMerchant/>}/>
                 
                 </Routes>
             </BrowserRouter>
