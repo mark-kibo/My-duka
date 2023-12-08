@@ -50,7 +50,7 @@ function Login() {
       })
       .catch(() => {
         setMsg({
-          type: "error",
+          type: "alert alert-error",
           message: "Invalid username or password",
         });
       });
@@ -59,7 +59,7 @@ function Login() {
 
   return (
     <main className="flex bg-[#ededed] min-h-screen flex-col sm:w-2/2 justify-center items-center h-screen">
-      <>
+       <>
         {msg?.message?.length > 0 && (
           <>
             <Messagehandler type={msg?.type} message={msg?.message} />
@@ -75,6 +75,7 @@ function Login() {
           overflow: "hidden",
         }}
       >
+       
         <div className="w-[100%] p-5 h-full  m-auto ">
           <div className="flex  justify-center items-center iconn__wrapper p-0">
             <img
