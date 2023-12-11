@@ -10,7 +10,7 @@ function ProductTable() {
   const [selectedProductId, setSelectedProductId] = useState(null);
 
   useEffect(() => {
-    fetch('https://myduka-apis.onrender.com/products/')
+    fetch('https://duka.onrender.com/products/')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
