@@ -70,7 +70,7 @@ function Login() {
         )}
       </>
       <div
-        className="flex bg-white w-[90%] md:w-[40%] lg:w-[30%]  h-auto  justify-center items-center p-1 m-5 shadow-2xl rounded-2xl"
+        className="flex bg-white w-[90%] md:w-[40%] lg:w-[30%]  h-auto  justify-center items-center p-1 m-5 shadow-2xl rounded-2xl text-black"
         style={{
           overflow: "hidden",
         }}
@@ -86,7 +86,7 @@ function Login() {
             />
           </div>
           <div className="py-2 m-4 text-center">
-            <h3 className="leading-4 uppercase font-bold ">MyDuka Login</h3>
+            <h3 className="leading-4 uppercase font-bold  dark:text-black text-black">MyDuka Login</h3>
           </div>
           <form method="POST" onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -102,7 +102,7 @@ function Login() {
                 id="name"
                 onChange={handleChange}
                 required
-                className={`bg-white text-asky-900 border border-sky-900 text-sm rounded w-full p-2.5 mb-4`}
+                className={`bg-white text-asky-900 border border-sky-900 text-sm rounded w-full p-2.5 mb-4 dark:text-black`}
                 placeholder="John Doe"
               />
             </div>
@@ -121,7 +121,7 @@ function Login() {
                 id="password"
                 onChange={handleChange}
                 required
-                className={`bg-white mb-4 text-sky-900 border border-sky-900 text-sm rounded w-full p-2.5`}
+                className={`bg-white mb-4 text-sky-900 border border-sky-900 text-sm rounded w-full p-2.5 dark:text-black`}
                 placeholder="Password"
               />
             </div>
