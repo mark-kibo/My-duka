@@ -45,7 +45,7 @@ function Login() {
         //     type: "success",
         //     message: "redirecting",
         //   });
-        navigate("https://my-duka-front-end.vercel.app/")
+        navigate("/")
   
       })
       .catch(() => {
