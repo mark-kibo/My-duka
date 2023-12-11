@@ -59,7 +59,7 @@ function UserTable() {
         email:adminEmail
       }, {
         headers:{
-          "Authorization":"token " + user?.token
+          "Authorization":"Bearer " + user?.token
         }
       });
       console.log(res);
