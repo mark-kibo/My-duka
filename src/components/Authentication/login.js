@@ -25,7 +25,7 @@ function Login() {
   // create mutation to post data
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await axios.post("https://myduka-apis.onrender.com/login/", {
+      const res = await axios.post("https://duka.onrender.com/login/", {
         username:formData.username,
         password:formData.password
       });
