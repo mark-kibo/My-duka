@@ -27,7 +27,7 @@ const Sidebar = () => {
                     <>
                     <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
                         <div className='flex items-center gap-[10px]'>
-                        <Link to="/products" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
+                        <Link to="products" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
                             <FaShoppingBag color='white' />
                             <p className='text-[14px] leading-[20px] font-normal text-white'>Products</p>
                         </Link>
@@ -37,7 +37,7 @@ const Sidebar = () => {
 
                     <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
                     <div className='flex items-center gap-[10px]'>
-                        <Link to="/clerks" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
+                        <Link to="clerks" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
                             <FaStore color='white' />
                             <p className='text-[14px] leading-[20px] font-normal text-white cursor-pointer'>clerks</p>
                         </Link>
@@ -47,7 +47,7 @@ const Sidebar = () => {
 
                     <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
                     <div className='flex items-center gap-[10px]'>
-                    <Link to="/supplyrequests" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
+                    <Link to="supplyrequests" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
                         <FaMoneyBill color='white' />
                         <p className='text-[14px] leading-[20px] font-normal text-white'>Supplier requests</p>
                     </Link>

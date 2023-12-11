@@ -27,7 +27,7 @@ const Router = () => {
                         <Route index element={<Main userRole={decoded_user?.role}/>} />
                         <Route path='/stores' element={<Stores />} />
                         <Route path='/users' element={<UserTable />} />
-                        <Route path='products' element={<Products/>}/>
+                        <Route path='/products' element={<Products/>}/>
                         <Route path='/clerks' element={<Clerks/>}/>
                         <Route path='/supplyrequests' element={<SupplyRequest/>}/>
                       
