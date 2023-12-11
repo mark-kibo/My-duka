@@ -8,45 +8,12 @@ export default function Table({ tableoptions }) {
 
 
 
-    const rows = []
-
-    const columns = [
-        {
-            field: 'Prefix',
-            headerName: 'Prefix',
-            width: 150,
-            type: 'string',
-        },
-        {
-            field: 'ShareName',
-            headerName: 'ShareName',
-            width: 150,
-            type: 'string',
-        },
-        {
-            field: 'ShortDesc',
-            headerName: 'Description',
-            width: 150,
-            type: 'string',
-        },
-        {
-            field: 'MonthlyCont',
-            headerName: 'Monthly Cont',
-            width: 150,
-            type: 'number', // Assuming it's a numeric field
-        },
-        {
-            field: 'MinBal',
-            headerName: 'Min Bal',
-            width: 150,
-            type: 'number', // Assuming it's a numeric field
-        },
-    ];
+    
     return (
         <Box sx={{ height: 400, width: 1  }}>
             <DataGrid
-                rows={rows}
-                columns={columns}
+                rows={tableoptions.rows}
+                columns={tableoptions.columns}
                 disableColumnFilter
                 disableColumnSelector
                 disableDensitySelector

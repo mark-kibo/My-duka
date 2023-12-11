@@ -51,6 +51,12 @@ function ProductTable() {
           components={{
             Toolbar: GridToolbar,
           }}
+
+          slotProps={{
+            toolbar: {
+                showQuickFilter: true,
+            },
+        }}
         />
       </Box>
     </div>
