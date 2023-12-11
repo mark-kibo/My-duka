@@ -15,6 +15,7 @@ import Login from '../components/Authentication/login'
 import SignUpAdmin from '../components/Authentication/signupAdmin'
 import SignUpMerchant from '../components/Authentication/signupMerchant'
 import Products from '../components/AdminPages/Products'
+import Clerks from '../components/AdminPages/clerk/clerk'
 
 const Router = () => {
     const {toggleDrawer, decoded_user}= useContext(sidebarcontext)
