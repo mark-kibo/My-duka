@@ -60,7 +60,7 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Total supply requests.</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40,000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40,00</h1>
             </div>
             <FaTruck fontSize={28} color='' />
           </div>
