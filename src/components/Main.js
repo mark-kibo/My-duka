@@ -1,9 +1,12 @@
 import React from 'react';
 import { FaEllipsisV, FaStore, FaCartPlus, FaMoneyBill, FaTruck } from 'react-icons/fa';
 import AreaChart from './charts/AreaChart';
-import PieChartPlot from './charts/PieChart';
+import PieChartPlot from './charts/BarChart';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import BarChart from './charts/BarChart';
+import PieDonChart from './charts/PieChart';
+import ColumnChart from './charts/ColumnChart';
 
 const Main = ({ userRole }) => {
 
@@ -26,7 +29,7 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Total sales</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-400 mt-5'>$40000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40000</h1>
             </div>
             <FaStore fontSize={28} color='green' />
           </div>
@@ -34,7 +37,7 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#1a1918] text-[11px] leading-[17px] font-bold'>Total supply requests</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-400 mt-5'>5000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>5000</h1>
             </div>
             <FaCartPlus className='outlined-none' fontSize={28} color='green' />
           </div>
@@ -42,14 +45,14 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Paid products</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-400 mt-5'>40,000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40,000</h1>
             </div>
             <FaMoneyBill fontSize={28} color='green' />
           </div>
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Non Paid products</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-400 mt-5'>40,000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40,000</h1>
             </div>
             <FaMoneyBill fontSize={28} color='green' />
           </div>
@@ -57,7 +60,7 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Total supply requests.</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-500 mt-5'>$40,000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40,000</h1>
             </div>
             <FaTruck fontSize={28} color='' />
           </div>
@@ -65,7 +68,7 @@ const Main = ({ userRole }) => {
           <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
             <div>
               <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>inactive accounts</h2>
-              <h1 className='text-[20px] leading-[24px] font-bold text-gray-500 mt-5'>$40,000</h1>
+              <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40,000</h1>
             </div>
             <FaTruck fontSize={28} color='' />
           </div>
@@ -89,6 +92,7 @@ const Main = ({ userRole }) => {
               >
                 <div>
                   <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>All Users</h2>
+                  <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40</h1>
 
                 </div>
                 <FaEllipsisV fontSize={28} color='blue' />
@@ -98,23 +102,24 @@ const Main = ({ userRole }) => {
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
                 <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Store-by-Store Report</h2>
-
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>3</h1>
               </div>
               <FaEllipsisV fontSize={28} color='purple' />
             </div>
 
-            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+            {/* <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
                 <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Individual Store Performance</h2>
-
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40,000</h1>
               </div>
               <FaEllipsisV fontSize={28} color='orange' />
-            </div>
+            </div> */}
 
             <Link to='/products' className='hover:underline'>
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
                 <div>
                 <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>30</h1>
                 </div>
                 <FaEllipsisV fontSize={28} color='blue' />
             </div>
@@ -196,41 +201,13 @@ const Main = ({ userRole }) => {
 
     
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-          <div className='p-4 shadow-md bg-white rounded-md flex flex-col hover:scale-[103%] cursor-pointer transition duration-100 '>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED] mb-[20px]'>
-            <h2>Earnings overview</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <AreaChart />
-          </div>
-
-          <div className='p-4 shadow-md bg-white rounded flex flex-col hover:scale-[103%] cursor-pointer transition duration-100 '>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED] mb-[20px]'>
-            <h2>Earnings overview</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <AreaChart />
-          </div>
-
-          <div className='p-4 shadow-md bg-white rounded flex flex-col hover:scale-[103%] cursor-pointer transition duration-100 '>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED] mb-[20px]'>
-            <h2>Earnings overview</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <AreaChart />
-          </div>
-
-
-          <div className='p-4 shadow-md bg-white rounded flex flex-col hover:scale-[103%] cursor-pointer transition duration-100 '>
-          <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED] mb-[20px]'>
-            <h2>Earnings overview</h2>
-            <FaEllipsisV color='gray' className='cursor-pointer' />
-          </div>
-          <AreaChart />
-          </div>
-
-      </div>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-2 py-4 ">
+								<BarChart/>
+                <AreaChart />
+                <PieDonChart/>
+                <ColumnChart/>
+				
+			</div>
     </div>
   );
 };
