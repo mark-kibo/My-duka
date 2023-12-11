@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEllipsisV, FaStore, FaCartPlus, FaMoneyBill, FaTruck } from 'react-icons/fa';
+import { FaEllipsisV, FaStore, FaCartPlus, FaMoneyBill, FaTruck, FaUserPlus } from 'react-icons/fa';
 import AreaChart from './charts/AreaChart';
 import PieChartPlot from './charts/BarChart';
 import { useState } from 'react';
@@ -91,37 +91,37 @@ const Main = ({ userRole }) => {
 
               >
                 <div>
-                  <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>All Users</h2>
+                  <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>All Users</h2>
                   <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40</h1>
 
                 </div>
-                <FaEllipsisV fontSize={28} color='blue' />
+                <FaUserPlus fontSize={28} color='blue' />
               </div>
             </Link>
 
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Store-by-Store Report</h2>
-                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>3</h1>
+                <h2 className='text-text-[#B5850F] text-[11px] leading-[17px] font-bold'>Store-by-Store Report</h2>
               </div>
-              <FaEllipsisV fontSize={28} color='purple' />
+              <FaStore fontSize={28} color='purple' />
             </div>
 
-            {/* <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
+            <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Individual Store Performance</h2>
-                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>$40,000</h1>
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Individual Store Performance</h2>
+         
+
               </div>
-              <FaEllipsisV fontSize={28} color='orange' />
-            </div> */}
+              <FaStore  fontSize={28} color='orange' />
+            </div>
 
             <Link to='/products' className='hover:underline'>
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
                 <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
                 <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>30</h1>
                 </div>
-                <FaEllipsisV fontSize={28} color='blue' />
+                <FaCartPlus fontSize={28} color='blue' />
             </div>
             </Link>
           </div>
@@ -144,25 +144,28 @@ const Main = ({ userRole }) => {
               
             >
               <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Products</h2>
-          
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Products</h2>
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40</h1>
+
               </div>
-              <FaEllipsisV fontSize={28} color='blue' />
+              <FaStore fontSize={28} color='blue' />
             </div>
             </Link>
 
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Stock</h2>
-                
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Stock</h2>
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>40</h1>
+
               </div>
               <FaEllipsisV fontSize={28} color='purple' />
             </div>
 
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Spoiled</h2>
-             
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Spoiled</h2>
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>10</h1>
+
               </div>
               <FaEllipsisV fontSize={28} color='orange' />
             </div>
@@ -170,9 +173,11 @@ const Main = ({ userRole }) => {
             <Link to='/products' className='hover:underline'>
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
                 <div>
-                <h2 className='text-[#1f1e1e] text-[11px] leading-[17px] font-bold'>Paid and Non-Paid Products</h2>
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Non-Paid Products</h2>
+                <h1 className='text-[20px] leading-[24px] font-bold text-gray-600 mt-5'>10</h1>
+
                 </div>
-                <FaEllipsisV fontSize={28} color='blue' />
+                <FaCartPlus fontSize={28} color='blue' />
             </div>
             </Link>
           </div>
