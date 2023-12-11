@@ -32,7 +32,7 @@ import {
 
   const addStoreMutation = useMutation(
     async (newStore) => {
-      const response = await fetch('https://myduka-apis.onrender.com/stores/', {
+      const response = await fetch('https://duka.onrender.com/stores/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
