@@ -7,13 +7,14 @@ import Stores from '../components/Stores'
 import PrivateRoute from '../utils/PrivateRoute'
 import UserTable from '../components/UserTable'
 import SideBarContextProvider, { sidebarcontext } from '../context/SideBarContext'
-import Products from '../components/AdminPages/Products'
-import Clerks from '../components/AdminPages/clerk/clerk'
+
+
 import SupplyRequest from '../components/AdminPages/supplyrequest/supplyrequest'
 import ProductTable from '../components/ProductTable'
 import Login from '../components/Authentication/login'
 import SignUpAdmin from '../components/Authentication/signupAdmin'
 import SignUpMerchant from '../components/Authentication/signupMerchant'
+import Products from '../components/AdminPages/Products'
 
 const Router = () => {
     const {toggleDrawer, decoded_user}= useContext(sidebarcontext)

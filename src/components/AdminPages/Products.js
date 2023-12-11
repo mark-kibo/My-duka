@@ -1,8 +1,10 @@
 import React from 'react'
 import Table from '../Reusables/Table'
 import AddProduct from './AddProduct'
-import { useQuery } from 'react-query';
+import { useQuery, QueryClient } from 'react-query';
 import axios from 'axios';
+
+const queryClient = new QueryClient();
 
 const columns = [
     {
@@ -91,7 +93,7 @@ const Products = () => {
 
 
     let propsObject = {
-        rows: data,
+        rows: data ? data : [],
         columns: columns,
     };
     return (
