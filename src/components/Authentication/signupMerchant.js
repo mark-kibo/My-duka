@@ -26,7 +26,7 @@ function SignUpMerchant() {
     // create mutation to post data
     const mutation = useMutation({
       mutationFn: async () => {
-        const res = await axios.post("https://myduka-apis.onrender.com/signup/superuser/", {
+        const res = await axios.post("https://duka.onrender.com/signup/superuser/", {
           ...formData,
           role: "merchant",
         });
