@@ -3,6 +3,7 @@ import AddClerk from './AddClerk'
 import Table from '../../Reusables/Table'
 
 const Clerks = () => {
+    
     return (
 
     // <div className='h-full mx-4 my-8 p-2 flex items-center justify-center overflow-hidden'>
