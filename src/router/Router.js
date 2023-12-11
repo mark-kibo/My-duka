@@ -22,7 +22,7 @@ const Router = () => {
             <BrowserRouter>
                 <Routes>
                 <Route element={<PrivateRoute />}>
-                    <Route path="/" element={<App />}>
+                    <Route path="/dashboard" element={<App />}>
                  
                         <Route index element={<Main userRole={decoded_user?.role}/>} />
                         <Route path='/stores' element={<Stores />} />
