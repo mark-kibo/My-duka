@@ -29,7 +29,7 @@ function SignUpAdmin() {
     // create mutation to post data
     const mutation = useMutation({
       mutationFn: async () => {
-        const res = await axios.post("https://myduka-apis.onrender.com/signup/", {
+        const res = await axios.post("https://duka.onrender.com/signup/", {
           ...formData,
           role: "admin",
         });
@@ -42,7 +42,7 @@ function SignUpAdmin() {
     const { data } = useQuery({
       queryKey: ["stores"],
       queryFn: async () => {
-        const res = await axios.get("https://myduka-apis.onrender.com/stores/");
+        const res = await axios.get("https://duka.onrender.com/stores/");
         return res.data;
       },
     });
@@ -53,7 +53,7 @@ function SignUpAdmin() {
         queryKey: [""],
         queryFn: async () => {
           const res = await axios.get(
-            `https://myduka-apis.onrender.com/email/email/${emailToken}`
+            `https://duka.onrender.com/email/email/${emailToken}`
           );
           return res.data;
         },
