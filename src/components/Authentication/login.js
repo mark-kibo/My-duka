@@ -45,7 +45,7 @@ function Login() {
         //     type: "success",
         //     message: "redirecting",
         //   });
-        navigate("/dashboard")
+        navigate("/")
   
       })
       .catch(() => {
