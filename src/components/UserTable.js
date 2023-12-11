@@ -138,6 +138,7 @@ function UserTable() {
       </Modal>
 
       <Box sx={{ height: 400, width: 1 }}>
+<>
        {mutation.isPending ? (
                 <span className="loading loading-dots loading-lg"></span>)}
         {mutation.isSuccess && (<Messagehandler type={"alert alert-success"} message={"email sent"}/>)}
@@ -154,6 +155,7 @@ function UserTable() {
             Toolbar: GridToolbar,
           }}
         />
+          </>
       </Box>
     </div>
   );
