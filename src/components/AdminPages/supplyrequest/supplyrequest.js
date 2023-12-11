@@ -89,7 +89,7 @@ const SupplyRequest = () => {
     const {data, isLoading}= useQuery({
         queryKey:["products"],
         queryFn:async ()=>{
-            const res= await axios.get("https://duka.onrender.com/products/")
+            const res= await axios.get("https://duka.onrender.com/supply_requests/")
             return res.data
         }
     })
@@ -102,7 +102,7 @@ const SupplyRequest = () => {
         <div className='h-screen flex flex-col mx-4'>
             
             <div className='rounded-lg flex items-center mt-2'>
-
+            {isLoading && (<span className="loading loading-dots loading-lg"></span>) }
                 <Table tableoptions={propsObject}/>
             </div>
 

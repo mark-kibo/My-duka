@@ -22,7 +22,7 @@ function UserTable() {
   const [showAddAdminModal, setShowAddAdminModal] = useState(false);
   const [adminEmail, setAdminEmail] = useState('');
 
-  const {user} = useContext(sidebarcontext);
+  const {user, userRole} = useContext(sidebarcontext);
 
   useEffect(() => {
     fetch('https://duka.onrender.com/users/all-users')
@@ -119,7 +119,7 @@ function UserTable() {
 
   return (
     <div className="user-table-container" style={{ padding: '20px' }}>
-      <Button onClick={handleAddAdmin} className="add-admin-button" style={{ marginBottom: '20px' }}>
+      <Button onClick={handleAddAdmin} className="add-admin-button" style={{ marginBottom: '20px' }} disabled={userRole !== "merchant"}>
         Add Admin
       </Button>
 
