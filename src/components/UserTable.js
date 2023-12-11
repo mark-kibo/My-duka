@@ -25,7 +25,7 @@ function UserTable() {
   const {user} = useContext(sidebarcontext);
 
   useEffect(() => {
-    fetch('https://myduka-apis.onrender.com/users/all-users')
+    fetch('https://duka.onrender.com/users/all-users')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -55,7 +55,7 @@ function UserTable() {
   console.log(user?.token)
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await axios.post("https://myduka-apis.onrender.com/email/email", {
+      const res = await axios.post("https://duka.onrender.com/email/email", {
         email:adminEmail
       }, {
         headers:{
