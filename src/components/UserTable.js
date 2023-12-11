@@ -52,7 +52,7 @@ function UserTable() {
     setShowAddAdminModal(false);
     setAdminEmail('');
   };
-  console.log(user?.token)
+  console.log(adminEmail)
   const mutation = useMutation({
     mutationFn: async () => {
       const res = await axios.post("https://duka.onrender.com/email/email", {
@@ -132,7 +132,7 @@ function UserTable() {
         
         <Input
           placeholder="Enter admin email"
-          value={adminEmail}
+          
           onChange={(e) => setAdminEmail(e.target.value)}
         />
       </Modal>
