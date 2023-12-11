@@ -1,7 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Modal, Input, Button } from 'antd';
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import {
+  useMutation,
+  QueryClient,
+  QueryClientProvider,
+  useQuery
+} from "@tanstack/react-query";
+import axios from "axios";
+import Messagehandler from './Reusables/Messagehandler';
+import { sidebarcontext } from '../context/SideBarContext';
+
+const queryClient = new QueryClient();
 
 const VISIBLE_FIELDS = ['user_id', 'username', 'email', 'full_name', 'role', 'store_id'];
 
@@ -11,8 +22,10 @@ function UserTable() {
   const [showAddAdminModal, setShowAddAdminModal] = useState(false);
   const [adminEmail, setAdminEmail] = useState('');
 
+  const {user} = useContext(sidebarcontext);
+
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/users/all-users')
+    fetch('https://duka.onrender.com/users/all-users')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -39,9 +52,25 @@ function UserTable() {
     setShowAddAdminModal(false);
     setAdminEmail('');
   };
+  console.log(user?.token)
+  const mutation = useMutation({
+    mutationFn: async () => {
+      const res = await axios.post("https://duka.onrender.com/email/email", {
+        email:adminEmail
+      }, {
+        headers:{
+          "Authorization":"token " + user?.token
+        }
+      });
+      console.log(res);
+      return res.data;
+    },
+  });
 
   const handleConfirmAddAdmin = () => {
     console.log('Add admin for user ID:', selectedUserId, 'with email:', adminEmail);
+    
+    mutation.mutateAsync()
     setShowAddAdminModal(false);
     setAdminEmail('');
   };
@@ -100,6 +129,7 @@ function UserTable() {
         onOk={handleConfirmAddAdmin}
         onCancel={handleCancelAddAdmin}
       >
+        
         <Input
           placeholder="Enter admin email"
           value={adminEmail}
@@ -108,6 +138,7 @@ function UserTable() {
       </Modal>
 
       <Box sx={{ height: 400, width: 1 }}>
+        {mutation.isSuccess && (<Messagehandler type={"alert alert-success"} message={"email sent"}/>)}
         <DataGrid
           rows={users}
           columns={columns}
