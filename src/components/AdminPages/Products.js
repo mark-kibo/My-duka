@@ -91,9 +91,9 @@ const Products = () => {
         }
     })
 
-
+    
     let propsObject = {
-        rows: data ? data : [],
+        rows: data ? data : [] ,
         columns: columns,
     };
     return (
