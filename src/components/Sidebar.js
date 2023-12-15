@@ -78,6 +78,25 @@ const Sidebar = () => {
                             </div>
     
                         </div>
+
+                        <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
+                            <div className='flex items-center gap-[10px]'>
+                            <Link to="/storereports" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
+                                <FaShoppingBag color='white' />
+                                <p className='text-[14px] leading-[20px] font-normal text-white'>Store by store report</p>
+                            </Link>
+                            </div>
+    
+                        </div>
+                        <div className='flex items-center justify-between gap-[10px] py-[15px] cursor-pointer'>
+                            <div className='flex items-center gap-[10px]'>
+                            <Link to="/stores" onClick={toggleDrawer("left", false)} className='flex items-center gap-[10px]'>
+                                <FaShoppingBag color='white' />
+                                <p className='text-[14px] leading-[20px] font-normal text-white'>Stores</p>
+                            </Link>
+                            </div>
+    
+                        </div>
                         </>
                     )
                 )}

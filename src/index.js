@@ -4,6 +4,7 @@ import './index.css';
 import Router from './router/Router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SideBarContextProvider from './context/SideBarContext';
+import App from './App';
 
 
 
@@ -16,7 +17,7 @@ root.render(
       <SideBarContextProvider>
 
 
-        <Router />
+        <App/>
 
       </SideBarContextProvider>
 

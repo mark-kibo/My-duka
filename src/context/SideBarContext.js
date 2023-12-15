@@ -20,11 +20,15 @@ const SideBarContextProvider = ({ children }) => {
 
   let decoded_user;
   let userRole;
+  let userId
 
 
   if(user?.token){
       decoded_user=jwtDecode(user?.token);
+      console.log(decoded_user)
       userRole= decoded_user?.role
+      userId= decoded_user?.id
+      console.log(userId)
   }
 
   
@@ -55,8 +59,11 @@ const SideBarContextProvider = ({ children }) => {
     toggleDrawer,
     userRole,
     user,
-    decoded_user
+    decoded_user,
+    userId
   };
+
+  console.log(userId)
 
   return (
     <sidebarcontext.Provider value={reusables}>

@@ -101,7 +101,7 @@ const Main = ({ userRole }) => {
 
             <div className='h-[100px] rounded-[8px] bg-white border-1-[4px] border-[#4E73DF] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-200'>
               <div>
-                <h2 className='text-text-[#B5850F] text-[11px] leading-[17px] font-bold'>Store-by-Store Report</h2>
+                <h2 className='text-[#B5850F] text-[11px] leading-[17px] font-bold'>Store-by-Store Report</h2>
               </div>
               <FaStore fontSize={28} color='purple' />
             </div>
